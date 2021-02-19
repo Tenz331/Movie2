@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+    <body>
+        <<script>
+            function getallJson(){
+                fetch("/jpareststarter/api/movie/all").then( res => res.json()).then(data =>{
+                    console.log("data",data)
+                    var array = data;
+            var table = document.getElementById('table1');
+            for(i = 0; i < array.length; i++ ){
+                var row = `<tr> 
+                <td>${array[i].id}</td> 
+                        <td>${array[i].title}</td> 
+                        <td>${array[i].year}</td> 
+                        <td>${array[i].actors}</td> 
+                         </tr>`;
+            table.innerHTML += row;
+            }
+                }
+                        
+                
+                )
+        
+            }
+             function getSpecific(){
+                var x = document.getElementById("id").value;
+                fetch("/jpareststarter/api/movie/byid/"+x).then( res => res.json()).then(data =>{
+                 console.log("data",data)
+                    var array = data;
+            var table = document.getElementById('table1');
+                var row = `<tr> 
+                <td>${array.id}</td> 
+                        <td>${array.title}</td> 
+                        <td>${array.year}</td> 
+                        <td>${array.actors}</td> 
+                         </tr>`;
+            table.innerHTML += row;
+          
+                }
+                        
+                
+                )
+        
+            
+        
+        }
+        function buildTable(inData){
+            var array = inData;
+            var table = document.getElementById('table1');
+            for(i = 0; i < array.length; i++ ){
+                var row = `<tr> 
+                        <td>${array[i].title}</td> 
+                        <td>${array[i].year}</td> 
+                        <td>${array[i].actors}</td> 
+                         </tr>`;
+            table.innerHTML += row;
+            }
+            }
+        </script>
+        <button onclick="getallJson()">Fetch all</button>
+<button onclick="getSpecific()">Fetch specific</button>
+  <input type="number" id="id" name="id"><br><br>
+        <h1>Table:</h1>
+        <table class="table">
+ <table class="table" id="table1">
+  <thead>
+    <tr>
+      <th scope="col">#id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Year</th>
+      <th scope="col">Actors</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+    </body>
+</html>
