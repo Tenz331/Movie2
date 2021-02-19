@@ -21,8 +21,8 @@ before_script:
 
 # TODO Add variable to make it simple to be reusable for all semester projects
 #- export DEBIAN_FRONTEND="noninteractive";
-#- PW=""
-#- USER_NAME=""
+#- PW="ax2"
+#- USER_NAME="dev"
 
 #- sudo apt-get clean
 #- sudo rm -r /var/lib/apt/lists/*
