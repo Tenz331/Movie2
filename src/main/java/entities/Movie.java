@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 
 
 @Entity
-@NamedQuery(name = "startcode_test.deleteAllRows", query = "DELETE from startcode_test")
+@NamedQuery(name = "Movie.deleteAllRows", query = "DELETE from Movie")
 public class Movie implements Serializable {
 
     private static final long serialVersionUID = 1L;
