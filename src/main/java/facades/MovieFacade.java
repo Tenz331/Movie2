@@ -61,6 +61,7 @@ public class MovieFacade {
             em.close();
         }
         
+        
     }
     
     public List<MovieDTO> getAll(){
