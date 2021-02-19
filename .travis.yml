@@ -12,7 +12,7 @@ cache:
 
 script:
   - mvn test
-  - mvn -Dremote.user=dev -Dremote.password=ax2 tomcat7:deploy
+  - mvn -Dremote.user=Emil -Dremote.password=Fej69gfx tomcat7:deploy
 
 services:
    - mysql
@@ -21,8 +21,8 @@ before_script:
 
 # TODO Add variable to make it simple to be reusable for all semester projects
 #- export DEBIAN_FRONTEND="noninteractive";
-#- PW="ax2"
-#- USER_NAME="dev"
+#- PW="Fej69gfx"
+#- USER_NAME="Emil"
 
 #- sudo apt-get clean
 #- sudo rm -r /var/lib/apt/lists/*
